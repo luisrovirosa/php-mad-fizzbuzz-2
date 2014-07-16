@@ -14,18 +14,27 @@ class Foo
         return $data;
     }
 
-    private function generateNumber($pos)
+    private function generateNumber($num)
     {
-        if (($pos % 3 == 0 && $pos % 5 == 0) ||
-                (strpos($pos, '3') !== false && strpos($pos, '5') !== false)) {
+        if ($this->isFizz($num) && $this->isBuzz($num)) {
             return 'FizzBuzz';
-        } elseif ($pos % 3 == 0 || strpos($pos, '3') !== false) {
+        } elseif ($this->isFizz($num)) {
             return 'Fizz';
-        } elseif ($pos % 5 == 0 || strpos($pos, '5') !== false) {
+        } elseif ($this->isBuzz($num)) {
             return 'Buzz';
         }
 
-        return $pos;
+        return $num;
+    }
+
+    private function isFizz($num)
+    {
+        return $num % 3 == 0 || strpos($num, '3') !== false;
+    }
+
+    private function isBuzz($num)
+    {
+        return $num % 5 == 0 || strpos($num, '5') !== false;
     }
 
 }
