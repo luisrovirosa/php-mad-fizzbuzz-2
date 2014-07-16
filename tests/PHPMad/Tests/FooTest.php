@@ -36,8 +36,11 @@ class FooTest extends TestCase
         $this->assertEquals('Buzz', $this->fizzBuzz[4]);
     }
 
-    // testMultipleOf5HasBuzz
-    // testMultipleOf15isFizzBuzz
+    function testMultipleOf15isFizzBuzz()
+    {
+        $this->assertEquals('FizzBuzz', $this->fizzBuzz[14]);
+    }
+
     // testContains3HasFizz
     // testContains5HasBuzz
     // testContains3And5IsFizzBuzz
