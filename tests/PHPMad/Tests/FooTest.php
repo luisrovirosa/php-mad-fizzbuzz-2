@@ -41,7 +41,11 @@ class FooTest extends TestCase
         $this->assertEquals('FizzBuzz', $this->fizzBuzz[14]);
     }
 
-    // testContains3HasFizz
+    function testContains3HasFizz()
+    {
+        $this->assertEquals('Fizz', $this->fizzBuzz[12]);
+    }
+
     // testContains5HasBuzz
     // testContains3And5IsFizzBuzz
 }
