@@ -2,13 +2,15 @@
 
 namespace PHPMad;
 
-class Foo
+class FizzBuzz
 {
+
+    const NUM = 100;
 
     public function run()
     {
         $data = array();
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= self::NUM; $i++) {
             $data[] = $this->generateNumber($i);
         }
         return $data;

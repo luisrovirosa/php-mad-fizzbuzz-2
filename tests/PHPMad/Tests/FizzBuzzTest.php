@@ -2,9 +2,9 @@
 
 namespace PHPMad\Tests;
 
-use PHPMad\Foo;
+use PHPMad\FizzBuzz;
 
-class FooTest extends TestCase
+class FooTest extends \PHPUnit_Framework_TestCase
 {
 
     protected $object;
@@ -12,7 +12,7 @@ class FooTest extends TestCase
 
     protected function setUp()
     {
-        $this->object = new Foo();
+        $this->object = new FizzBuzz();
         $this->fizzBuzz = $this->object->run();
     }
 
