@@ -1,0 +1,5 @@
+<testsuites bootstrap="tests/bootstrap.php" colors="true">
+    <testsuite name="My Test Suite">
+        <directory>tests/PHPMad/*</directory>
+    </testsuite>
+</testsuites>
