@@ -16,7 +16,8 @@ class Foo
 
     private function generateNumber($pos)
     {
-        if ($pos % 3 == 0 && $pos % 5 == 0) {
+        if (($pos % 3 == 0 && $pos % 5 == 0) ||
+                (strpos($pos, '3') !== false && strpos($pos, '5') !== false)) {
             return 'FizzBuzz';
         } elseif ($pos % 3 == 0 || strpos($pos, '3') !== false) {
             return 'Fizz';

@@ -51,5 +51,9 @@ class FooTest extends TestCase
         $this->assertEquals('Buzz', $this->fizzBuzz[51]);
     }
 
-    // testContains3And5IsFizzBuzz
+    function testContains3And5IsFizzBuzz()
+    {
+        $this->assertEquals('FizzBuzz', $this->fizzBuzz[52]);
+    }
+
 }
