@@ -20,7 +20,7 @@ class Foo
             return 'FizzBuzz';
         } elseif ($pos % 3 == 0 || strpos($pos, '3') !== false) {
             return 'Fizz';
-        } elseif ($pos % 5 == 0) {
+        } elseif ($pos % 5 == 0 || strpos($pos, '5') !== false) {
             return 'Buzz';
         }
 
