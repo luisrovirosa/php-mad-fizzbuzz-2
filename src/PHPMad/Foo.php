@@ -18,6 +18,8 @@ class Foo
     {
         if ($pos % 3 == 0) {
             return 'Fizz';
+        } elseif ($pos % 5 == 0) {
+            return 'Buzz';
         }
 
         return $pos;
