@@ -31,12 +31,27 @@ class FizzBuzz
 
     private function isFizz($num)
     {
-        return $num % 3 == 0 || strpos($num, '3') !== false;
+        return $this->isMultipleOrContains($num, 3);
     }
 
     private function isBuzz($num)
     {
-        return $num % 5 == 0 || strpos($num, '5') !== false;
+        return $this->isMultipleOrContains($num, 5);
+    }
+
+    private function isMultipleOrContains($num, $numberHasToContains)
+    {
+        return $this->isMultiple($num, $numberHasToContains) || $this->contains($num, $numberHasToContains);
+    }
+
+    private function isMultiple($num, $multiple)
+    {
+        return $num % $multiple == 0;
+    }
+
+    private function contains($numToCheck, $numberHasToContain)
+    {
+        return strpos($numToCheck, (string) $numberHasToContain) !== false;
     }
 
 }
