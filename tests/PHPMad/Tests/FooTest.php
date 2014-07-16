@@ -18,7 +18,7 @@ class FooTest extends TestCase
 
     function testLength()
     {
-        $this->assertCount(100, $this->fizzbuzz);
+        $this->assertCount(100, $this->fizzBuzz);
     }
 
     function testNormalNumbersAreThemselves()
@@ -26,4 +26,14 @@ class FooTest extends TestCase
         $this->assertEquals(1, $this->fizzBuzz[0]);
     }
 
+    function testMultipleOf3HasFizz()
+    {
+        $this->assertEquals('Fizz', $this->fizzBuzz[2]);
+    }
+
+    // testMultipleOf5HasBuzz
+    // testMultipleOf15isFizzBuzz
+    // testContains3HasFizz
+    // testContains5HasBuzz
+    // testContains3And5IsFizzBuzz
 }

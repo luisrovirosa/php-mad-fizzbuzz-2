@@ -7,7 +7,20 @@ class Foo
 
     public function run()
     {
-        return array_fill(0, 100, 1);
+        $data = array();
+        for ($i = 1; $i <= 100; $i++) {
+            $data[] = $this->computeMultipleOf3($i);
+        }
+        return $data;
+    }
+
+    private function computeMultipleOf3($pos)
+    {
+        if ($pos % 3 == 0) {
+            return 'Fizz';
+        }
+
+        return $pos;
     }
 
 }
