@@ -12,7 +12,8 @@ class FizzBuzz
     public function __construct()
     {
         $this->rules = array(
-            new Rule\FizzRule()
+            new Rule\FizzRule(),
+            new Rule\BuzzRule(),
         );
     }
 
@@ -29,8 +30,6 @@ class FizzBuzz
     {
         if ($this->isFizz($num) && $this->isBuzz($num)) {
             return 'FizzBuzz';
-        } elseif ($this->isBuzz($num)) {
-            return 'Buzz';
         }
 
         /* @var $rule \PHPMad\Rule\Rule */
