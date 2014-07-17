@@ -12,6 +12,7 @@ class FizzBuzz
     public function __construct()
     {
         $this->rules = array(
+            new Rule\FizzBuzzRule(),
             new Rule\FizzRule(),
             new Rule\BuzzRule(),
         );
@@ -28,9 +29,6 @@ class FizzBuzz
 
     private function generateNumber($num)
     {
-        if ($this->isFizz($num) && $this->isBuzz($num)) {
-            return 'FizzBuzz';
-        }
 
         /* @var $rule \PHPMad\Rule\Rule */
         foreach ($this->rules as $rule) {
@@ -40,31 +38,6 @@ class FizzBuzz
         }
 
         return $num;
-    }
-
-    private function isFizz($num)
-    {
-        return $this->isMultipleOrContains($num, 3);
-    }
-
-    private function isBuzz($num)
-    {
-        return $this->isMultipleOrContains($num, 5);
-    }
-
-    private function isMultipleOrContains($num, $numberHasToContains)
-    {
-        return $this->isMultiple($num, $numberHasToContains) || $this->contains($num, $numberHasToContains);
-    }
-
-    private function isMultiple($num, $multiple)
-    {
-        return $num % $multiple == 0;
-    }
-
-    private function contains($numToCheck, $numberHasToContain)
-    {
-        return strpos($numToCheck, (string) $numberHasToContain) !== false;
     }
 
 }
