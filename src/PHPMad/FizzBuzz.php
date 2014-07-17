@@ -7,6 +7,15 @@ class FizzBuzz
 
     const NUM = 100;
 
+    private $rules;
+
+    public function __construct()
+    {
+        $this->rules = array(
+            new Rule\FizzRule()
+        );
+    }
+
     public function run()
     {
         $data = array();
@@ -20,10 +29,15 @@ class FizzBuzz
     {
         if ($this->isFizz($num) && $this->isBuzz($num)) {
             return 'FizzBuzz';
-        } elseif ($this->isFizz($num)) {
-            return 'Fizz';
         } elseif ($this->isBuzz($num)) {
             return 'Buzz';
+        }
+
+        /* @var $rule \PHPMad\Rule\Rule */
+        foreach ($this->rules as $rule) {
+            if ($rule->check($num)) {
+                return $rule->value($num);
+            }
         }
 
         return $num;
