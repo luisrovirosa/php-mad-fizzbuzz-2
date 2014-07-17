@@ -11,7 +11,7 @@ interface Rule
     public function check($num);
 
     /**
-     * @return string | null The value if the rule is mached
+     * @return string The value if the rule is mached
      */
     public function value($num);
 }
