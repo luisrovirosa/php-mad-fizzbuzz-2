@@ -7,35 +7,26 @@ class FizzBuzz
 
     const NUM = 100;
 
-    private $rules;
+    private $ruleEngine;
 
     public function __construct()
     {
-        $this->rules = array(
-            new Rule\FizzBuzzRule(),
-            new Rule\FizzRule(),
-            new Rule\BuzzRule(),
-            new Rule\SameNumRule(),
-        );
+        $this->ruleEngine = new RuleEngine();
+        $this->ruleEngine
+                ->addRule(new Rule\FizzBuzzRule())
+                ->addRule(new Rule\FizzRule())
+                ->addRule(new Rule\BuzzRule())
+                ->addRule(new Rule\SameNumRule())
+        ;
     }
 
     public function run()
     {
         $data = array();
         for ($i = 1; $i <= self::NUM; $i++) {
-            $data[] = $this->generateNumber($i);
+            $data[] = $this->ruleEngine->generateNumber($i);
         }
         return $data;
-    }
-
-    private function generateNumber($num)
-    {
-        /* @var $rule \PHPMad\Rule\Rule */
-        foreach ($this->rules as $rule) {
-            if ($rule->check($num)) {
-                return $rule->value($num);
-            }
-        }
     }
 
 }
