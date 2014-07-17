@@ -15,6 +15,7 @@ class FizzBuzz
             new Rule\FizzBuzzRule(),
             new Rule\FizzRule(),
             new Rule\BuzzRule(),
+            new Rule\SameNumRule(),
         );
     }
 
@@ -29,15 +30,12 @@ class FizzBuzz
 
     private function generateNumber($num)
     {
-
         /* @var $rule \PHPMad\Rule\Rule */
         foreach ($this->rules as $rule) {
             if ($rule->check($num)) {
                 return $rule->value($num);
             }
         }
-
-        return $num;
     }
 
 }
